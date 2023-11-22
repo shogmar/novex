@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  symfony:
+    container_name: symfony
+    build: 
+      dockerfile: Dockerfile
+      context: ./symfony
+    working_dir: /var/www/symfony
+    volumes: 
+        - ./symfony:/var/www/symfony
+        - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "80"
+
+
